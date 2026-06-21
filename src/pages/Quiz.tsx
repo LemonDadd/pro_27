@@ -4,8 +4,8 @@ import {
   Sparkles, ArrowLeft, Home, RotateCcw,
   ChevronRight, Trophy
 } from 'lucide-react';
-import Navbar from '@/components/layout/Navbar';
-import Footer from '@/components/layout/Footer';
+import Layout from '@/components/layout/Layout';
+import RingProgress from '@/components/common/RingProgress';
 import destinations from '@/data/destinations';
 import {
   computeQuizRecommendations,
@@ -133,55 +133,6 @@ function QuizCard({
   );
 }
 
-function MatchRing({ percentage, size = 140 }: { percentage: number; size?: number }) {
-  const circumference = 2 * Math.PI * ((size / 2) - 12);
-  const dashOffset = circumference - (percentage / 100) * circumference;
-
-  return (
-    <div className="relative" style={{ width: size, height: size }}>
-      <svg className="w-full h-full -rotate-90" viewBox={`0 0 ${size} ${size}`}>
-        <circle
-          cx={size / 2}
-          cy={size / 2}
-          r={(size / 2) - 12}
-          fill="none"
-          stroke="#E2E8F0"
-          strokeWidth="10"
-        />
-        <circle
-          cx={size / 2}
-          cy={size / 2}
-          r={(size / 2) - 12}
-          fill="none"
-          stroke="url(#matchGradient)"
-          strokeWidth="10"
-          strokeLinecap="round"
-          strokeDasharray={circumference}
-          strokeDashoffset={dashOffset}
-          style={{ transition: 'stroke-dashoffset 1.5s ease-out' }}
-        />
-        <defs>
-          <linearGradient id="matchGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#F97316" />
-            <stop offset="100%" stopColor="#EA580C" />
-          </linearGradient>
-        </defs>
-      </svg>
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="text-center">
-          <div
-            className="font-bold tabular-nums text-[#F97316]"
-            style={{ fontSize: size * 0.22, fontFamily: "'Fraunces', serif" }}
-          >
-            {percentage}%
-          </div>
-          <div className="text-xs text-slate-400 font-medium">匹配度</div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 function ResultCard({
   result, rank,
 }: { result: QuizResult; rank: 1 | 2 | 3 }) {
@@ -237,7 +188,17 @@ function ResultCard({
       </button>
 
       <div className="p-6 flex flex-col items-center">
-        <MatchRing percentage={result.percentage} size={rankInfo.ringSize} />
+        <RingProgress
+          mode="percent"
+          percent={result.percentage}
+          size={rankInfo.ringSize}
+          strokeWidth={10}
+          gradientFrom="#F97316"
+          gradientTo="#EA580C"
+          transition="stroke-dashoffset 1.5s ease-out"
+          percentLabel="匹配度"
+          percentFontFamily="'Fraunces', serif"
+        />
         <p className="mt-4 text-sm text-slate-500 text-center leading-relaxed">
           {result.destination.tagline}
         </p>
@@ -278,9 +239,10 @@ export default function Quiz() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#FEF3C7]/20 via-white to-[#E0F2FE]/20 flex flex-col">
-      <Navbar />
-
+    <Layout
+      background="bg-gradient-to-b from-[#FEF3C7]/20 via-white to-[#E0F2FE]/20"
+      flexCol
+    >
       <main className="flex-1">
         <div className="sticky top-16 lg:top-20 z-40 bg-white/80 backdrop-blur-xl border-b border-slate-100">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 py-4">
@@ -403,8 +365,6 @@ export default function Quiz() {
           )}
         </div>
       </main>
-
-      <Footer />
-    </div>
+    </Layout>
   );
 }

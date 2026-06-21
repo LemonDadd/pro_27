@@ -4,8 +4,7 @@ import {
   Heart, Footprints, Trash2, Compass,
   ArrowRight, Move, Share2
 } from 'lucide-react';
-import Navbar from '@/components/layout/Navbar';
-import Footer from '@/components/layout/Footer';
+import Layout from '@/components/layout/Layout';
 import EmptyState from '@/components/common/EmptyState';
 import WishlistShareModal from '@/components/share/WishlistShareModal';
 import destinations from '@/data/destinations';
@@ -162,9 +161,34 @@ export default function Wishlist() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white flex flex-col">
-      <Navbar />
-
+    <Layout
+      flexCol
+      extras={
+        <WishlistShareModal
+          open={shareOpen}
+          onClose={() => setShareOpen(false)}
+          title={activeTab === 'wishlist' ? '愿望清单' : '足迹记录'}
+          subtitle={
+            activeTab === 'wishlist'
+              ? `我想去的 ${currentItems.length} 个旅行目的地`
+              : `我已经打卡的 ${currentItems.length} 个足迹`
+          }
+          accentBg={
+            activeTab === 'wishlist'
+              ? 'bg-gradient-to-br from-orange-400 to-orange-600'
+              : 'bg-gradient-to-br from-emerald-400 to-emerald-600'
+          }
+          icon={
+            activeTab === 'wishlist' ? (
+              <Heart className="w-7 h-7 fill-white" />
+            ) : (
+              <Footprints className="w-7 h-7" />
+            )
+          }
+          items={currentItems}
+        />
+      }
+    >
       <main className="flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-10">
         <div className="mb-10">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-[#F97316]/10 to-[#0C4A6E]/10 text-sm font-semibold text-[#0C4A6E] mb-4">
@@ -326,32 +350,6 @@ export default function Wishlist() {
           </>
         )}
       </main>
-
-      <Footer />
-
-      <WishlistShareModal
-        open={shareOpen}
-        onClose={() => setShareOpen(false)}
-        title={activeTab === 'wishlist' ? '愿望清单' : '足迹记录'}
-        subtitle={
-          activeTab === 'wishlist'
-            ? `我想去的 ${currentItems.length} 个旅行目的地`
-            : `我已经打卡的 ${currentItems.length} 个足迹`
-        }
-        accentBg={
-          activeTab === 'wishlist'
-            ? 'bg-gradient-to-br from-orange-400 to-orange-600'
-            : 'bg-gradient-to-br from-emerald-400 to-emerald-600'
-        }
-        icon={
-          activeTab === 'wishlist' ? (
-            <Heart className="w-7 h-7 fill-white" />
-          ) : (
-            <Footprints className="w-7 h-7" />
-          )
-        }
-        items={currentItems}
-      />
-    </div>
+    </Layout>
   );
 }

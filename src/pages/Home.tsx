@@ -1,6 +1,5 @@
 import { useState, useMemo } from 'react';
-import Navbar from '@/components/layout/Navbar';
-import Footer from '@/components/layout/Footer';
+import Layout from '@/components/layout/Layout';
 import HeroSection from '@/components/destination/HeroSection';
 import FilterPanel from '@/components/filters/FilterPanel';
 import MobileFilterDrawer from '@/components/filters/MobileFilterDrawer';
@@ -33,8 +32,18 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
-      <Navbar />
+    <Layout
+      extras={
+        <>
+          <MobileFilterDrawer
+            open={mobileFilterOpen}
+            onClose={() => setMobileFilterOpen(false)}
+          />
+          <CompareBar />
+          <CompareDrawer />
+        </>
+      }
+    >
       <HeroSection
         searchQuery={filters.searchQuery}
         onSearchChange={setSearchQuery}
@@ -57,26 +66,16 @@ export default function Home() {
               onOpenFilter={() => setMobileFilterOpen(true)}
             />
 
-            {viewMode === 'grid' ? (
-              <div id="destination-grid">
+            <div id="destination-grid">
+              {viewMode === 'grid' ? (
                 <DestinationGrid destinations={filteredDestinations} />
-              </div>
-            ) : (
-              <div id="destination-grid">
+              ) : (
                 <WorldMap destinations={filteredDestinations} />
-              </div>
-            )}
+              )}
+            </div>
           </div>
         </div>
       </main>
-
-      <Footer />
-      <MobileFilterDrawer
-        open={mobileFilterOpen}
-        onClose={() => setMobileFilterOpen(false)}
-      />
-      <CompareBar />
-      <CompareDrawer />
-    </div>
+    </Layout>
   );
 }

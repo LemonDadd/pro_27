@@ -4,8 +4,7 @@ import {
   MapPin, Heart, Footprints, Globe, Compass,
   Trophy, BarChart3, ArrowRight
 } from 'lucide-react';
-import Navbar from '@/components/layout/Navbar';
-import Footer from '@/components/layout/Footer';
+import Layout from '@/components/layout/Layout';
 import WorldMap from '@/components/map/WorldMap';
 import DestinationCard from '@/components/destination/DestinationCard';
 import destinations from '@/data/destinations';
@@ -132,9 +131,10 @@ export default function FootprintMap() {
   }, [visitedDestinations]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#E0F2FE]/30 via-white to-[#FEF3C7]/20 flex flex-col">
-      <Navbar />
-
+    <Layout
+      background="bg-gradient-to-b from-[#E0F2FE]/30 via-white to-[#FEF3C7]/20"
+      flexCol
+    >
       <main className="flex-1">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <div className="mb-10">
@@ -310,8 +310,6 @@ export default function FootprintMap() {
           )}
         </div>
       </main>
-
-      <Footer />
-    </div>
+    </Layout>
   );
 }

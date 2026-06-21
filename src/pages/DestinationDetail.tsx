@@ -5,8 +5,8 @@ import {
   Globe, Shield, Banknote, Plug, Clock, FileCheck2,
   Eye, Sparkles
 } from 'lucide-react';
-import Navbar from '@/components/layout/Navbar';
-import Footer from '@/components/layout/Footer';
+import Layout from '@/components/layout/Layout';
+import RingProgress from '@/components/common/RingProgress';
 import ImageCarousel from '@/components/common/ImageCarousel';
 import HeartButton from '@/components/common/HeartButton';
 import EmptyState from '@/components/common/EmptyState';
@@ -19,57 +19,6 @@ import {
   MONTH_SHORT_LABELS, CONTINENT_LABELS
 } from '@/utils/display';
 import { cn } from '@/lib/utils';
-
-function CircularProgress({
-  value, max = 10, label, color, inverse = false,
-}: { value: number; max?: number; label: string; color: string; inverse?: boolean }) {
-  const displayValue = inverse ? 10 - value : value;
-  const percentage = (displayValue / max) * 100;
-  const circumference = 2 * Math.PI * 45;
-  const dashOffset = circumference - (percentage / 100) * circumference;
-
-  return (
-    <div className="flex flex-col items-center">
-      <div className="relative w-32 h-32">
-        <svg className="w-full h-full -rotate-90" viewBox="0 0 100 100">
-          <circle
-            cx="50" cy="50" r="45"
-            fill="none"
-            stroke="#E2E8F0"
-            strokeWidth="8"
-          />
-          <circle
-            cx="50" cy="50" r="45"
-            fill="none"
-            stroke={color}
-            strokeWidth="8"
-            strokeLinecap="round"
-            strokeDasharray={circumference}
-            strokeDashoffset={dashOffset}
-            style={{ transition: 'stroke-dashoffset 1s ease-out' }}
-          />
-        </svg>
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center">
-            <div
-              className="text-2xl font-bold tabular-nums"
-              style={{ color }}
-            >
-              {displayValue.toFixed(1)}
-            </div>
-            <div className="text-xs text-slate-400 font-medium">/ {max}</div>
-          </div>
-        </div>
-      </div>
-      <div className="mt-3 text-sm font-semibold text-[#0C4A6E] text-center">
-        {label}
-      </div>
-      {inverse && (
-        <div className="text-xs text-slate-400 mt-0.5">数值越低越好</div>
-      )}
-    </div>
-  );
-}
 
 function BestMonthsMatrix({ bestMonths }: { bestMonths: number[] }) {
   return (
@@ -197,8 +146,7 @@ export default function DestinationDetail() {
 
   if (!destination) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white flex flex-col">
-        <Navbar />
+      <Layout flexCol>
         <div className="flex-1 flex items-center justify-center p-4">
           <EmptyState
             title="找不到这个目的地"
@@ -214,8 +162,7 @@ export default function DestinationDetail() {
             }
           />
         </div>
-        <Footer />
-      </div>
+      </Layout>
     );
   }
 
@@ -223,9 +170,7 @@ export default function DestinationDetail() {
   const visited = hasVisited(destination.id);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
-      <Navbar />
-
+    <Layout>
       <div className="relative h-screen">
         <ImageCarousel
           images={destination.gallery}
@@ -338,21 +283,25 @@ export default function DestinationDetail() {
             综合评分
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-            <CircularProgress
+            <RingProgress
               value={destination.ratings.languageFriendly}
               label="语言友好度"
-              color="#0C4A6E"
+              progressColor="#0C4A6E"
+              valueColor="#0C4A6E"
             />
-            <CircularProgress
+            <RingProgress
               value={destination.ratings.safety}
               label="安全指数"
-              color="#10B981"
+              progressColor="#10B981"
+              valueColor="#10B981"
             />
-            <CircularProgress
+            <RingProgress
               value={destination.ratings.priceIndex}
               label="物价友好度"
-              color="#F97316"
+              progressColor="#F97316"
+              valueColor="#F97316"
               inverse
+              inverseHint
             />
           </div>
         </section>
@@ -426,8 +375,6 @@ export default function DestinationDetail() {
           </section>
         )}
       </main>
-
-      <Footer />
-    </div>
+    </Layout>
   );
 }
