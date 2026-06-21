@@ -58,9 +58,13 @@ export default function Home() {
             />
 
             {viewMode === 'grid' ? (
-              <DestinationGrid destinations={filteredDestinations} />
+              <div id="destination-grid">
+                <DestinationGrid destinations={filteredDestinations} />
+              </div>
             ) : (
-              <WorldMap destinations={filteredDestinations} />
+              <div id="destination-grid">
+                <WorldMap destinations={filteredDestinations} />
+              </div>
             )}
           </div>
         </div>

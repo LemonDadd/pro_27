@@ -2,11 +2,12 @@ import { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import {
   Heart, Footprints, Trash2, Compass,
-  ArrowRight, Move
+  ArrowRight, Move, Share2
 } from 'lucide-react';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import EmptyState from '@/components/common/EmptyState';
+import WishlistShareModal from '@/components/share/WishlistShareModal';
 import destinations from '@/data/destinations';
 import { useUserStore } from '@/store/useUserStore';
 import type { Destination } from '@/types';
@@ -119,6 +120,7 @@ function QuickCard({
 
 export default function Wishlist() {
   const [activeTab, setActiveTab] = useState<TabKey>('wishlist');
+  const [shareOpen, setShareOpen] = useState(false);
   const wishlistIds = useUserStore((s) => s.wishlist);
   const visitedIds = useUserStore((s) => s.visited);
   const toggleWishlist = useUserStore((s) => s.toggleWishlist);
@@ -296,6 +298,15 @@ export default function Wishlist() {
                   </p>
                 </div>
                 <div className="flex gap-3">
+                  {currentItems.length > 0 && (
+                    <button
+                      onClick={() => setShareOpen(true)}
+                      className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-gradient-to-br from-[#F97316] to-[#EA580C] text-white text-sm font-semibold shadow-lg shadow-[#F97316]/30 hover:shadow-xl hover:shadow-[#F97316]/40 hover:-translate-y-0.5 transition-all"
+                    >
+                      <Share2 className="w-4 h-4" />
+                      分享截图
+                    </button>
+                  )}
                   <Link
                     to="/quiz"
                     className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-white text-[#0C4A6E] text-sm font-semibold ring-1 ring-[#0C4A6E]/10 hover:ring-[#0C4A6E]/20 transition-all"
@@ -317,6 +328,30 @@ export default function Wishlist() {
       </main>
 
       <Footer />
+
+      <WishlistShareModal
+        open={shareOpen}
+        onClose={() => setShareOpen(false)}
+        title={activeTab === 'wishlist' ? '愿望清单' : '足迹记录'}
+        subtitle={
+          activeTab === 'wishlist'
+            ? `我想去的 ${currentItems.length} 个旅行目的地`
+            : `我已经打卡的 ${currentItems.length} 个足迹`
+        }
+        accentBg={
+          activeTab === 'wishlist'
+            ? 'bg-gradient-to-br from-orange-400 to-orange-600'
+            : 'bg-gradient-to-br from-emerald-400 to-emerald-600'
+        }
+        icon={
+          activeTab === 'wishlist' ? (
+            <Heart className="w-7 h-7 fill-white" />
+          ) : (
+            <Footprints className="w-7 h-7" />
+          )
+        }
+        items={currentItems}
+      />
     </div>
   );
 }
