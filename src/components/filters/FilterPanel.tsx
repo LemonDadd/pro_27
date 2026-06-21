@@ -169,7 +169,7 @@ export default function FilterPanel() {
         <FilterGroup
           title="💰 预算档位"
           count={s.budgetLevels.length}
-          onReset={() => s.budgetLevels.forEach(s.toggleBudget)}
+          onReset={s.resetBudgets}
         >
           {BUDGET_OPTIONS.map((o) => (
             <Chip
@@ -185,7 +185,7 @@ export default function FilterPanel() {
         <FilterGroup
           title="📅 出行月份"
           count={s.months.length}
-          onReset={() => s.months.forEach(s.toggleMonth)}
+          onReset={s.resetMonths}
         >
           {Array.from({ length: 12 }, (_, i) => i + 1).map((m) => (
             <Chip
@@ -201,7 +201,7 @@ export default function FilterPanel() {
         <FilterGroup
           title="⏱️ 旅行天数"
           count={s.dayRanges.length}
-          onReset={() => s.dayRanges.forEach(s.toggleDayRange)}
+          onReset={s.resetDayRanges}
         >
           {DAY_RANGE_OPTIONS.map((o) => (
             <Chip
@@ -217,7 +217,7 @@ export default function FilterPanel() {
         <FilterGroup
           title="🎨 旅行主题"
           count={s.themes.length}
-          onReset={() => s.themes.forEach(s.toggleTheme)}
+          onReset={s.resetThemes}
         >
           {THEME_OPTIONS.map((o) => (
             <Chip
@@ -234,7 +234,7 @@ export default function FilterPanel() {
         <FilterGroup
           title="✈️ 飞行时长"
           count={s.flightDurations.length}
-          onReset={() => s.flightDurations.forEach(s.toggleFlightDuration)}
+          onReset={s.resetFlightDurations}
         >
           {FLIGHT_OPTIONS.map((o) => (
             <Chip
@@ -250,7 +250,7 @@ export default function FilterPanel() {
         <FilterGroup
           title="🛂 签证要求"
           count={s.visaTypes.length}
-          onReset={() => s.visaTypes.forEach(s.toggleVisaType)}
+          onReset={s.resetVisaTypes}
         >
           {VISA_OPTIONS.map((o) => (
             <Chip
@@ -266,7 +266,7 @@ export default function FilterPanel() {
         <FilterGroup
           title="⭐ 目的地热度"
           count={s.popularity.length}
-          onReset={() => s.popularity.forEach(s.togglePopularity)}
+          onReset={s.resetPopularity}
         >
           {POPULARITY_OPTIONS.map((o) => (
             <Chip
@@ -282,7 +282,7 @@ export default function FilterPanel() {
         <FilterGroup
           title="🌸 季节限定"
           count={s.seasonalTags.length}
-          onReset={() => s.seasonalTags.forEach(s.toggleSeasonalTag)}
+          onReset={s.resetSeasonalTags}
         >
           {SEASONAL_OPTIONS.map((o) => (
             <Chip

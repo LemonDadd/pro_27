@@ -20,6 +20,14 @@ interface FilterStore extends FilterState {
   toggleVisaType: (v: VisaType) => void;
   togglePopularity: (p: Popularity) => void;
   toggleSeasonalTag: (s: SeasonalTag) => void;
+  resetBudgets: () => void;
+  resetMonths: () => void;
+  resetDayRanges: () => void;
+  resetThemes: () => void;
+  resetFlightDurations: () => void;
+  resetVisaTypes: () => void;
+  resetPopularity: () => void;
+  resetSeasonalTags: () => void;
   setSearchQuery: (q: string) => void;
   setSortBy: (s: SortBy) => void;
   reset: () => void;
@@ -65,6 +73,14 @@ export const useFilterStore = create<FilterStore>((set) => ({
     set((s) => ({
       seasonalTags: toggleInArray(s.seasonalTags, sTag) as SeasonalTag[],
     })),
+  resetBudgets: () => set({ budgetLevels: [] }),
+  resetMonths: () => set({ months: [] }),
+  resetDayRanges: () => set({ dayRanges: [] }),
+  resetThemes: () => set({ themes: [] }),
+  resetFlightDurations: () => set({ flightDurations: [] }),
+  resetVisaTypes: () => set({ visaTypes: [] }),
+  resetPopularity: () => set({ popularity: [] }),
+  resetSeasonalTags: () => set({ seasonalTags: [] }),
   setSearchQuery: (q) => set({ searchQuery: q }),
   setSortBy: (s) => set({ sortBy: s }),
   reset: () => set(initialState),

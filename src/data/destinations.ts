@@ -17,7 +17,9 @@ const destinations: Destination[] = [
       'https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=800&q=80',
       'https://images.unsplash.com/photo-1526481280693-3bfa7568e0f3?w=800&q=80'
     ],
-    tags: ['ancient-city', 'ancient-city', 'food', 'solo-friendly', 'nature'],
+    tags: [
+      'ancient-city', 'food', 'solo-friendly', 'nature'
+    ],
     seasonalTags: ['cherry-blossom', 'red-leaves'],
     ratings: { languageFriendly: 7, safety: 9, priceIndex: 6 },
     bestMonths: [3, 4, 10, 11],
@@ -54,7 +56,9 @@ const destinations: Destination[] = [
       'https://images.unsplash.com/photo-1536098561742-ca998e48cbcc?w=800&q=80',
       'https://images.unsplash.com/photo-1480796927426-f609979314bd?w=800&q=80'
     ],
-    tags: ['city', 'food', 'city', 'solo-friendly', 'family'],
+    tags: [
+      'city', 'food', 'solo-friendly', 'family'
+    ],
     seasonalTags: ['cherry-blossom'],
     ratings: { languageFriendly: 8, safety: 9, priceIndex: 7 },
     bestMonths: [3, 4, 9, 10],
@@ -127,7 +131,9 @@ const destinations: Destination[] = [
       'https://images.unsplash.com/photo-1541692641319-981cc79ee10a?w=800&q=80',
       'https://images.unsplash.com/photo-1588868984329-2b7f8d1d1fe8?w=800&q=80'
     ],
-    tags: ['city', 'food', 'city', 'solo-friendly', 'family'],
+    tags: [
+      'city', 'food', 'solo-friendly', 'family'
+    ],
     seasonalTags: ['cherry-blossom', 'red-leaves'],
     ratings: { languageFriendly: 7, safety: 8, priceIndex: 6 },
     bestMonths: [4, 5, 10],
@@ -199,7 +205,9 @@ const destinations: Destination[] = [
       'https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?w=800&q=80',
       'https://images.unsplash.com/photo-1504214208698-ea1916a2195a?w=800&q=80'
     ],
-    tags: ['city', 'ancient-city', 'food', 'solo-friendly', 'city'],
+    tags: [
+      'city', 'ancient-city', 'food', 'solo-friendly'
+    ],
     ratings: { languageFriendly: 8, safety: 7, priceIndex: 3 },
     bestMonths: [11, 12, 1, 2],
     suggestedDays: { min: 3, max: 5 },
@@ -343,7 +351,9 @@ const destinations: Destination[] = [
       'https://images.unsplash.com/photo-1607301406259-dfb49190a2a6?w=800&q=80',
       'https://images.unsplash.com/photo-1603092531398-3d55a9f73d10?w=800&q=80'
     ],
-    tags: ['city', 'food', 'family', 'solo-friendly', 'city'],
+    tags: [
+      'city', 'food', 'family', 'solo-friendly'
+    ],
     ratings: { languageFriendly: 8, safety: 8, priceIndex: 4 },
     bestMonths: [1, 2, 5, 6],
     suggestedDays: { min: 3, max: 5 },
@@ -452,7 +462,9 @@ const destinations: Destination[] = [
       'https://images.unsplash.com/photo-1491356734772-81e7dd23ab5f?w=800&q=80',
       'https://images.unsplash.com/photo-1531572753322-ad063cecc140?w=800&q=80'
     ],
-    tags: ['city', 'food', 'city', 'family', 'solo-friendly'],
+    tags: [
+      'city', 'food', 'family', 'solo-friendly'
+    ],
     ratings: { languageFriendly: 8, safety: 9, priceIndex: 8 },
     bestMonths: [10, 11, 12, 1, 2],
     suggestedDays: { min: 3, max: 5 },
@@ -596,7 +608,9 @@ const destinations: Destination[] = [
       'https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=800&q=80',
       'https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?w=800&q=80'
     ],
-    tags: ['ancient-city', 'ancient-city', 'adventure', 'solo-friendly', 'nature'],
+    tags: [
+      'ancient-city', 'adventure', 'solo-friendly', 'nature'
+    ],
     ratings: { languageFriendly: 8, safety: 7, priceIndex: 3 },
     bestMonths: [11, 12, 1, 2, 3],
     suggestedDays: { min: 3, max: 5 },
@@ -667,7 +681,9 @@ const destinations: Destination[] = [
       'https://images.unsplash.com/photo-1563492065599-3520f775eeed?w=800&q=80',
       'https://images.unsplash.com/photo-1528181304800-259b08848526?w=800&q=80'
     ],
-    tags: ['ancient-city', 'ancient-city', 'food'],
+    tags: [
+      'ancient-city', 'food'
+    ],
     ratings: { languageFriendly: 5, safety: 6, priceIndex: 2 },
     bestMonths: [11, 12, 1, 2],
     suggestedDays: { min: 2, max: 4 },
@@ -703,7 +719,9 @@ const destinations: Destination[] = [
       'https://images.unsplash.com/photo-1504450874802-0ba2bcd9b5ae?w=800&q=80',
       'https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&q=80'
     ],
-    tags: ['ancient-city', 'ancient-city', 'nature', 'adventure'],
+    tags: [
+      'ancient-city', 'nature', 'adventure'
+    ],
     ratings: { languageFriendly: 5, safety: 7, priceIndex: 3 },
     bestMonths: [11, 12, 1, 2],
     suggestedDays: { min: 3, max: 5 },
@@ -739,7 +757,9 @@ const destinations: Destination[] = [
       'https://images.unsplash.com/photo-1518893063132-36e46dbe2428?w=800&q=80',
       'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&q=80'
     ],
-    tags: ['ancient-city', 'nature', 'adventure', 'ancient-city'],
+    tags: [
+      'ancient-city', 'nature', 'adventure'
+    ],
     ratings: { languageFriendly: 6, safety: 6, priceIndex: 3 },
     bestMonths: [9, 10, 11, 3, 4, 5],
     suggestedDays: { min: 5, max: 10 },
@@ -775,7 +795,9 @@ const destinations: Destination[] = [
       'https://images.unsplash.com/photo-1477587458883-47145ed94245?w=800&q=80',
       'https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=800&q=80'
     ],
-    tags: ['ancient-city', 'ancient-city', 'solo-friendly'],
+    tags: [
+      'ancient-city', 'solo-friendly'
+    ],
     ratings: { languageFriendly: 5, safety: 5, priceIndex: 2 },
     bestMonths: [10, 11, 12, 1, 2, 3],
     suggestedDays: { min: 3, max: 5 },
@@ -811,7 +833,9 @@ const destinations: Destination[] = [
       'https://images.unsplash.com/photo-1477587458883-47145ed94245?w=800&q=80',
       'https://images.unsplash.com/photo-1587474201555-23f8655e5f8e?w=800&q=80'
     ],
-    tags: ['ancient-city', 'ancient-city', 'family', 'solo-friendly'],
+    tags: [
+      'ancient-city', 'family', 'solo-friendly'
+    ],
     ratings: { languageFriendly: 5, safety: 5, priceIndex: 3 },
     bestMonths: [10, 11, 12, 1, 2, 3],
     suggestedDays: { min: 2, max: 3 },
@@ -847,7 +871,9 @@ const destinations: Destination[] = [
       'https://images.unsplash.com/photo-1599661046289-e31897846e41?w=800&q=80',
       'https://images.unsplash.com/photo-1477587458883-47145ed94245?w=800&q=80'
     ],
-    tags: ['ancient-city', 'ancient-city', 'family', 'city'],
+    tags: [
+      'ancient-city', 'family', 'city'
+    ],
     ratings: { languageFriendly: 6, safety: 6, priceIndex: 3 },
     bestMonths: [10, 11, 12, 1, 2, 3],
     suggestedDays: { min: 3, max: 4 },
@@ -883,7 +909,9 @@ const destinations: Destination[] = [
       'https://images.unsplash.com/photo-1505761671935-60b3a7427bad?w=800&q=80',
       'https://images.unsplash.com/photo-1559628275-ee236b50c86c?w=800&q=80'
     ],
-    tags: ['city', 'city', 'family', 'adventure', 'honeymoon'],
+    tags: [
+      'city', 'family', 'adventure', 'honeymoon'
+    ],
     ratings: { languageFriendly: 9, safety: 9, priceIndex: 9 },
     bestMonths: [11, 12, 1, 2, 3],
     suggestedDays: { min: 4, max: 7 },
@@ -955,7 +983,9 @@ const destinations: Destination[] = [
       'https://images.unsplash.com/photo-1570939274717-7eda259b50ed?w=800&q=80',
       'https://images.unsplash.com/photo-1530841377377-3ff06c0ca713?w=800&q=80'
     ],
-    tags: ['ancient-city', 'city', 'food', 'ancient-city', 'solo-friendly'],
+    tags: [
+      'ancient-city', 'city', 'food', 'solo-friendly'
+    ],
     seasonalTags: ['red-leaves'],
     ratings: { languageFriendly: 7, safety: 7, priceIndex: 4 },
     bestMonths: [4, 5, 9, 10],
@@ -1067,7 +1097,9 @@ const destinations: Destination[] = [
       'https://images.unsplash.com/photo-1493246507139-91e8fad9978e?w=800&q=80',
       'https://images.unsplash.com/photo-1508672019047-c439ef2a2c53?w=800&q=80'
     ],
-    tags: ['city', 'ancient-city', 'family', 'solo-friendly', 'city'],
+    tags: [
+      'city', 'ancient-city', 'family', 'solo-friendly'
+    ],
     ratings: { languageFriendly: 9, safety: 8, priceIndex: 9 },
     bestMonths: [5, 6, 7, 8, 9],
     suggestedDays: { min: 5, max: 10 },
@@ -1104,7 +1136,9 @@ const destinations: Destination[] = [
       'https://images.unsplash.com/photo-1543151919-6270a26c437?w=800&q=80',
       'https://images.unsplash.com/photo-1493246507139-91e8fad9978e?w=800&q=80'
     ],
-    tags: ['ancient-city', 'ancient-city', 'city', 'food', 'honeymoon'],
+    tags: [
+      'ancient-city', 'city', 'food', 'honeymoon'
+    ],
     ratings: { languageFriendly: 6, safety: 7, priceIndex: 7 },
     bestMonths: [4, 5, 9, 10],
     suggestedDays: { min: 4, max: 7 },
@@ -1140,7 +1174,9 @@ const destinations: Destination[] = [
       'https://images.unsplash.com/photo-1471037871280774-223335567ff5a?w=800&q=80',
       'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800&q=80'
     ],
-    tags: ['city', 'honeymoon', 'honeymoon', 'solo-friendly'],
+    tags: [
+      'city', 'honeymoon', 'solo-friendly'
+    ],
     ratings: { languageFriendly: 6, safety: 7, priceIndex: 8 },
     bestMonths: [4, 5, 9, 10],
     suggestedDays: { min: 2, max: 4 },
@@ -1285,7 +1321,9 @@ const destinations: Destination[] = [
       'https://images.unsplash.com/photo-1534351590666-13e3e96c5013?w=800&q=80',
       'https://images.unsplash.com/photo-1467269204594-966b7a38722c?w=800&q=80'
     ],
-    tags: ['city', 'ancient-city', 'ancient-city', 'solo-friendly'],
+    tags: [
+      'city', 'ancient-city', 'solo-friendly'
+    ],
     ratings: { languageFriendly: 8, safety: 8, priceIndex: 6 },
     bestMonths: [5, 6, 7, 8, 9],
     suggestedDays: { min: 4, max: 6 },
@@ -1322,7 +1360,9 @@ const destinations: Destination[] = [
       'https://images.unsplash.com/photo-1515119716958?w=800&q=80',
       'https://images.unsplash.com/photo-1549227779-32574463?w=800&q=80'
     ],
-    tags: ['city', 'ancient-city', 'ancient-city', 'honeymoon', 'family'],
+    tags: [
+      'city', 'ancient-city', 'honeymoon', 'family'
+    ],
     ratings: { languageFriendly: 7, safety: 9, priceIndex: 7 },
     bestMonths: [4, 5, 9, 10],
     suggestedDays: { min: 3, max: 5 },
@@ -1430,7 +1470,9 @@ const destinations: Destination[] = [
       'https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?w=800&q=80',
       'https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&q=80'
     ],
-    tags: ['ancient-city', 'ancient-city', 'city', 'solo-friendly'],
+    tags: [
+      'ancient-city', 'city', 'solo-friendly'
+    ],
     ratings: { languageFriendly: 7, safety: 7, priceIndex: 5 },
     bestMonths: [4, 5, 6, 9, 10],
     suggestedDays: { min: 3, max: 5 },
@@ -1651,7 +1693,9 @@ const destinations: Destination[] = [
       'https://images.unsplash.com/photo-1522093007474-d86e9bf7ba6f?w=800&q=80',
       'https://images.unsplash.com/photo-1496588152823-86ff7695e68f?w=800&q=80'
     ],
-    tags: ['city', 'city', 'family', 'food', 'ancient-city'],
+    tags: [
+      'city', 'family', 'food', 'ancient-city'
+    ],
     ratings: { languageFriendly: 10, safety: 6, priceIndex: 9 },
     bestMonths: [4, 5, 6, 9, 10],
     suggestedDays: { min: 5, max: 10 },
@@ -1687,7 +1731,9 @@ const destinations: Destination[] = [
       'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
       'https://images.unsplash.com/photo-1468413253725-0d5181091126?w=800&q=80'
     ],
-    tags: ['city', 'beach', 'family', 'city'],
+    tags: [
+      'city', 'beach', 'family'
+    ],
     ratings: { languageFriendly: 10, safety: 6, priceIndex: 8 },
     bestMonths: [3, 4, 5, 9, 10, 11],
     suggestedDays: { min: 5, max: 8 },
@@ -1980,7 +2026,9 @@ const destinations: Destination[] = [
       'https://images.unsplash.com/photo-1555993539-1732b0258235?w=800&q=80',
       'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80'
     ],
-    tags: ['ancient-city', 'ancient-city', 'ancient-city', 'family'],
+    tags: [
+      'ancient-city', 'family'
+    ],
     ratings: { languageFriendly: 5, safety: 5, priceIndex: 3 },
     bestMonths: [10, 11, 12, 1, 2, 3],
     suggestedDays: { min: 4, max: 7 },
@@ -2053,7 +2101,9 @@ const destinations: Destination[] = [
       'https://images.unsplash.com/photo-1473580044384-7ba9967e16a0?w=800&q=80',
       'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80'
     ],
-    tags: ['ancient-city', 'ancient-city', 'food', 'adventure', 'solo-friendly'],
+    tags: [
+      'ancient-city', 'food', 'adventure', 'solo-friendly'
+    ],
     ratings: { languageFriendly: 5, safety: 6, priceIndex: 3 },
     bestMonths: [3, 4, 5, 9, 10, 11],
     suggestedDays: { min: 4, max: 7 },
@@ -2236,7 +2286,9 @@ const destinations: Destination[] = [
       'https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=800&q=80',
       'https://images.unsplash.com/photo-1526481280693-3bfa7568e0f3?w=800&q=80'
     ],
-    tags: ['ancient-city', 'family', 'nature', 'ancient-city'],
+    tags: [
+      'ancient-city', 'family', 'nature'
+    ],
     seasonalTags: ['cherry-blossom', 'red-leaves'],
     ratings: { languageFriendly: 7, safety: 9, priceIndex: 5 },
     bestMonths: [3, 4, 10, 11],
@@ -2273,7 +2325,9 @@ const destinations: Destination[] = [
       'https://images.unsplash.com/photo-1526481280693-3bfa7568e0f3?w=800&q=80',
       'https://images.unsplash.com/photo-1590559899731-a382839e5549?w=800&q=80'
     ],
-    tags: ['ancient-city', 'ancient-city', 'food', 'solo-friendly'],
+    tags: [
+      'ancient-city', 'food', 'solo-friendly'
+    ],
     seasonalTags: ['cherry-blossom', 'red-leaves'],
     ratings: { languageFriendly: 6, safety: 9, priceIndex: 5 },
     bestMonths: [3, 4, 10, 11],
@@ -2528,7 +2582,9 @@ const destinations: Destination[] = [
       'https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=800&q=80',
       'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=800&q=80'
     ],
-    tags: ['ancient-city', 'ancient-city', 'food', 'family', 'ancient-city'],
+    tags: [
+      'ancient-city', 'food', 'family'
+    ],
     ratings: { languageFriendly: 9, safety: 9, priceIndex: 3 },
     bestMonths: [3, 4, 5, 9, 10, 11],
     suggestedDays: { min: 3, max: 5 },
@@ -3288,7 +3344,9 @@ const destinations: Destination[] = [
       'https://images.unsplash.com/photo-1536599018102-9f803c140fc1?w=800&q=80',
       'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=800&q=80'
     ],
-    tags: ['city', 'food', 'family', 'city'],
+    tags: [
+      'city', 'food', 'family'
+    ],
     ratings: { languageFriendly: 10, safety: 9, priceIndex: 7 },
     bestMonths: [3, 4, 5, 9, 10, 11],
     suggestedDays: { min: 2, max: 4 },

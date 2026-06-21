@@ -6,7 +6,7 @@ import type { Destination } from "@/types";
 import {
   BUDGET_LABELS, VISA_LABELS, CONTINENT_LABELS,
   POPULARITY_LABELS, SAFETY_LABELS, FORMATTERS,
-  VISA_COLORS, POPULARITY_COLORS,
+  VISA_COLORS, POPULARITY_COLORS, TAG_LABELS, TAG_EMOJI,
 } from "@/utils/display";
 import { cn } from "@/lib/utils";
 import HeartButton from "@/components/common/HeartButton";
@@ -422,7 +422,8 @@ export default function CompareDrawer() {
                             key={t}
                             className="text-[11px] bg-amber-50 text-amber-700 px-2 py-1 rounded-full ring-1 ring-amber-100 font-medium"
                           >
-                            {t}
+                            {TAG_EMOJI[t] && <span className="mr-0.5">{TAG_EMOJI[t]}</span>}
+                            {TAG_LABELS[t] || t}
                           </span>
                         ))}
                       </div>
