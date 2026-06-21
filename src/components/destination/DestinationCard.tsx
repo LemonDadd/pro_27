@@ -4,6 +4,7 @@ import { useMemo } from "react";
 import type { Destination } from "@/types";
 import HeartButton from "@/components/common/HeartButton";
 import RatingBar from "@/components/destination/RatingBar";
+import CompareButton from "@/components/compare/CompareButton";
 import {
   TAG_LABELS,
   TAG_EMOJI,
@@ -190,6 +191,7 @@ export default function DestinationCard({
             >
               <Eye size={15} />
             </button>
+            <CompareButton destinationId={id} size="sm" />
           </div>
         </div>
       </div>

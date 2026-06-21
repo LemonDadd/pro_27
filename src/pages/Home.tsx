@@ -3,15 +3,19 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import HeroSection from '@/components/destination/HeroSection';
 import FilterPanel from '@/components/filters/FilterPanel';
+import MobileFilterDrawer from '@/components/filters/MobileFilterDrawer';
 import SortControls from '@/components/destination/SortControls';
 import DestinationGrid from '@/components/destination/DestinationGrid';
 import WorldMap from '@/components/map/WorldMap';
+import CompareBar from '@/components/compare/CompareBar';
+import CompareDrawer from '@/components/compare/CompareDrawer';
 import { useFilterStore } from '@/store/useFilterStore';
 import destinations from '@/data/destinations';
 import { filterAndSortDestinations } from '@/utils/matchScore';
 
 export default function Home() {
   const [viewMode, setViewMode] = useState<'grid' | 'map'>('grid');
+  const [mobileFilterOpen, setMobileFilterOpen] = useState(false);
   const filters = useFilterStore();
   const setSearchQuery = useFilterStore((s) => s.setSearchQuery);
 
@@ -50,6 +54,7 @@ export default function Home() {
               total={filteredDestinations.length}
               viewMode={viewMode}
               onToggleView={setViewMode}
+              onOpenFilter={() => setMobileFilterOpen(true)}
             />
 
             {viewMode === 'grid' ? (
@@ -62,6 +67,12 @@ export default function Home() {
       </main>
 
       <Footer />
+      <MobileFilterDrawer
+        open={mobileFilterOpen}
+        onClose={() => setMobileFilterOpen(false)}
+      />
+      <CompareBar />
+      <CompareDrawer />
     </div>
   );
 }

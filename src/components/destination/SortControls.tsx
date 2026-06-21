@@ -1,4 +1,4 @@
-import { ArrowUpDown, Wallet, Clock, Star, Map, LayoutGrid } from "lucide-react";
+import { ArrowUpDown, Wallet, Clock, Star, Map, LayoutGrid, SlidersHorizontal } from "lucide-react";
 import type { SortBy } from "@/types";
 import { useFilterStore } from "@/store/useFilterStore";
 import { cn } from "@/lib/utils";
@@ -18,10 +18,21 @@ interface Props {
   total: number;
   viewMode: "grid" | "map";
   onToggleView: (v: "grid" | "map") => void;
+  onOpenFilter?: () => void;
 }
 
-export default function SortControls({ total, viewMode, onToggleView }: Props) {
+export default function SortControls({ total, viewMode, onToggleView, onOpenFilter }: Props) {
   const { sortBy, setSortBy } = useFilterStore();
+  const activeFilterCount = useFilterStore((s) =>
+    s.budgetLevels.length +
+    s.months.length +
+    s.dayRanges.length +
+    s.themes.length +
+    s.flightDurations.length +
+    s.visaTypes.length +
+    s.popularity.length +
+    s.seasonalTags.length
+  );
 
   return (
     <div className="flex flex-wrap items-center justify-between gap-3 bg-white rounded-2xl px-5 py-3 shadow-md ring-1 ring-slate-100 mb-6">
@@ -50,6 +61,20 @@ export default function SortControls({ total, viewMode, onToggleView }: Props) {
       </div>
 
       <div className="flex items-center gap-3">
+        {onOpenFilter && (
+          <button
+            onClick={onOpenFilter}
+            className="lg:hidden inline-flex items-center gap-1.5 rounded-xl px-3.5 py-2 text-sm font-bold text-white bg-gradient-to-br from-sky-900 to-sky-700 shadow-md relative"
+          >
+            <SlidersHorizontal size={16} />
+            筛选
+            {activeFilterCount > 0 && (
+              <span className="absolute -top-1.5 -right-1.5 min-w-[20px] h-[20px] px-1 rounded-full bg-orange-500 text-white text-[10px] font-bold flex items-center justify-center shadow-md ring-2 ring-white">
+                {activeFilterCount}
+              </span>
+            )}
+          </button>
+        )}
         <div className="text-sm text-slate-600">
           找到 <span className="font-bold text-orange-500 text-lg">{total}</span>{" "}
           个目的地
